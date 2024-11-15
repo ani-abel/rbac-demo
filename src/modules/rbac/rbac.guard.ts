@@ -37,7 +37,6 @@ export class RbacGuard implements CanActivate {
         where: { id: user.roleId },
         relations: ['rolePermissions', 'rolePermissions.permissionType'],
       });
-      console.log({ role });
       const rules =
         this.reflector.get<RequiredRules[]>(
           CHECK_ABILITY,
